@@ -1,0 +1,299 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.hero-section {
+    position: relative;
+    background-image: url('../images/background-index.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 0;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #6E4D2B, #DFC7A0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-custom {
+    position: relative;
+    overflow: hidden;
+    background-color: #6E4D2B;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: color 0.5s ease, transform 0.3s ease;
+    z-index: 1;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-custom::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #DFC7A0;
+    top: 100%;
+    left: 0;
+    z-index: -1;
+    transition: top 0.5s ease;
+}
+
+.btn-custom:hover {
+    color: #000;
+    transform: scale(1.05);
+}
+
+.btn-custom:hover::before {
+    top: 0;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .content p {
+        font-size: 0.9rem;
+    }
+
+    .btn-custom {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2.2x rem;
+    }
+
+    .content p {
+        font-size: 0.8rem;
+    }
+
+    .btn-custom {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+}
+
+/* CSS Tentang */
+
+#tentang {
+    margin: 6rem 0;
+}
+
+#tentang .judul-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+#tentang .judul {
+    font-size: 1.25rem;
+    font-weight: 600;
+    background: linear-gradient(90deg, #6E4D2B, #DFC7A0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+#tentang .judul .garis-kiri,
+#tentang .judul .garis-kanan {
+    display: inline-block;
+    height: 3px;
+    width: 20px;
+    vertical-align: middle;
+    background-color: #6E4D2B;
+    margin: 0 8px;
+}
+
+#tentang .judul .garis-kanan {
+    background-color: #DFC7A0;
+}
+
+#tentang p {
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    color: #333;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+@media (max-width: 1399px) {
+    #tentang .judul {
+        font-size: 1rem;
+    }
+
+    #tentang p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    #tentang {
+        margin: 2rem 0;
+    }
+
+    #tentang .row {
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    #tentang .col-md-3,
+    #tentang .col-md-6 {
+        width: 100%;
+        max-width: 700px;
+        text-align: center !important;
+        margin-bottom: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    #tentang img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+
+@media (max-width: 768px) {
+    #tentang p {
+        font-size: 0.95rem;
+        padding: 0 1rem;
+    }
+
+    #tentang .judul {
+        font-size: 1rem;
+    }
+
+    #tentang .judul .garis-kiri,
+    #tentang .judul .garis-kanan {
+        width: 20px;
+    }
+}
+
+/* CSS Visi & Misi */
+
+#visi-misi {
+    background-color: #2b190c;
+    color: #000;
+}
+
+#visi-misi .judul {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+#visi-misi .garis-kiri,
+#visi-misi .garis-kanan {
+    display: inline-block;
+    width: 20px;
+    height: 3px;
+    background-color: #fff;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+.visi-misi-card {
+    background-color: #fff;
+    border-radius: 6px;
+    display: flex;
+    overflow: hidden;
+    min-height: 170px;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.strip-left {
+    background-color: #6e4d2b;
+    clip-path: polygon(40% 0, 100% 0, 60% 100%, 0% 100%);
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.strip-right {
+    background-color: #dfc7a0;
+    clip-path: polygon(40% 0, 100% 0, 60% 100%, 0% 100%);
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.icon {
+    font-size: 25px;
+    color: #fff;
+}
+
+.card-content {
+    padding: 20px;
+    flex: 1;
+}
+
+@media (max-width: 991px) {
+    .visi-misi-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .strip-left,
+    .strip-right {
+        clip-path: none;
+        width: 100%;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .card-content {
+        text-align: center !important;
+    }
+}
