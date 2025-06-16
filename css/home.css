@@ -117,14 +117,14 @@ body {
     margin: 6rem 0;
 }
 
-#tentang .judul-wrapper {
+.judul-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
 }
 
-#tentang .judul {
+.judul {
     font-size: 1.25rem;
     font-weight: 600;
     background: linear-gradient(90deg, #6E4D2B, #DFC7A0);
@@ -134,8 +134,8 @@ body {
     margin: 0;
 }
 
-#tentang .judul .garis-kiri,
-#tentang .judul .garis-kanan {
+.judul .garis-kiri,
+.judul .garis-kanan {
     display: inline-block;
     height: 3px;
     width: 20px;
@@ -144,7 +144,7 @@ body {
     margin: 0 8px;
 }
 
-#tentang .judul .garis-kanan {
+.judul .garis-kanan {
     background-color: #DFC7A0;
 }
 
@@ -160,10 +160,6 @@ body {
 }
 
 @media (max-width: 1399px) {
-    #tentang .judul {
-        font-size: 1rem;
-    }
-
     #tentang p {
         font-size: 0.8rem;
     }
@@ -205,23 +201,37 @@ body {
     }
 
     #tentang .judul {
-        font-size: 1rem;
-    }
-
-    #tentang .judul .garis-kiri,
-    #tentang .judul .garis-kanan {
-        width: 20px;
+        font-size: 1.25rem;
     }
 }
 
 /* CSS Visi & Misi */
 
 #visi-misi {
-    background-color: #2b190c;
+    background: url('../images/background-vm.jpg') no-repeat center center;
+    background-size: cover;
     color: #000;
+    position: relative;
+    z-index: 1;
 }
 
-#visi-misi .judul {
+#visi-misi::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+#visi-misi>* {
+    position: relative;
+    z-index: 2;
+}
+
+#visi-misi .judul-vm {
     color: #fff;
     font-weight: 600;
     font-size: 1.25rem;
@@ -246,7 +256,7 @@ body {
     max-width: 100%;
     position: relative;
     width: 100%;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .strip-left {
@@ -295,5 +305,172 @@ body {
 
     .card-content {
         text-align: center !important;
+    }
+}
+
+/* CSS Produk */
+
+.card-produk {
+    border: 1px solid #6E4D2B;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.gambar-produk {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.gambar-produk img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-produk .card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.card-produk .card-title {
+    margin-bottom: 10px;
+    color: #6E4D2B;
+    font-weight: bold;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.rating {
+    color: #f1c40f;
+    text-align: left;
+}
+
+/* CSS Footer */
+
+.footer-custom {
+    background: linear-gradient(to right, #6B3E1D, #C8A976);
+}
+
+.footer-custom a {
+    transition: all 0.3s ease;
+}
+
+.footer-custom a:hover {
+    opacity: 0.8;
+    text-decoration: underline !important;
+}
+
+.footer-custom .contact-info a {
+    display: inline-block;
+    padding: 2px 0;
+}
+
+/* Social Media Icons */
+.footer-custom .fa-instagram:hover {
+    color: #000000 !important;
+}
+
+.footer-custom .fa-tiktok:hover {
+    color: #000000 !important;
+}
+
+@media (max-width: 991px) {
+    .footer-custom .col-md-4 {
+        width: 45%;
+    }
+
+    .footer-custom .col-md-8 {
+        width: 55%;
+    }
+
+    .footer-custom .text-end.text-md-start {
+        text-align: right !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .footer-custom .d-flex.flex-lg-row {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .footer-custom .me-lg-3 {
+        margin-right: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .footer-custom .text-lg-start {
+        text-align: center !important;
+    }
+}
+
+
+/* Untuk memastikan alignment konsisten */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Untuk layar di bawah 1200px (lg breakpoint) */
+@media (max-width: 1199.98px) {
+    .row-cols-md-3>* {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+}
+
+/* Untuk layar di bawah 768px (md breakpoint) */
+@media (max-width: 767.98px) {
+    .row-cols-2>* {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}
+
+/* Untuk layar sangat kecil di bawah 576px */
+@media (max-width: 575.98px) {
+    .row-cols-2>* {
+        width: 100%;
+    }
+}
+
+/* Untuk semua section pada layar kecil */
+@media (max-width: 768px) {
+
+    section,
+    footer {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    /* Untuk container di dalam section agar tidak double padding */
+    section,
+    footer .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Penyesuaian khusus untuk beberapa section */
+    #hero .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #tentang .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Untuk judul section yang keluar dari container */
+    .judul-wrapper {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
