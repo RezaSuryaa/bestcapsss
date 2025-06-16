@@ -4,9 +4,65 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1199.98px) {
+    .row-cols-md-3>* {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .row-cols-2>* {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .row-cols-2>* {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    section,
+    footer {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    section,
+    footer .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #hero .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #tentang .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .judul-wrapper {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* CSS Landing Page */
 .hero-section {
     position: relative;
-    background-image: url('../images/background-index.jpg');
+    background-image: url('../images/background-home.png');
     background-size: cover;
     background-position: center;
     min-height: 100vh;
@@ -372,7 +428,6 @@ body {
     padding: 2px 0;
 }
 
-/* Social Media Icons */
 .footer-custom .fa-instagram:hover {
     color: #000000 !important;
 }
@@ -408,69 +463,5 @@ body {
 
     .footer-custom .text-lg-start {
         text-align: center !important;
-    }
-}
-
-
-/* Untuk memastikan alignment konsisten */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-/* Untuk layar di bawah 1200px (lg breakpoint) */
-@media (max-width: 1199.98px) {
-    .row-cols-md-3>* {
-        flex: 0 0 auto;
-        width: 33.33333333%;
-    }
-}
-
-/* Untuk layar di bawah 768px (md breakpoint) */
-@media (max-width: 767.98px) {
-    .row-cols-2>* {
-        flex: 0 0 auto;
-        width: 50%;
-    }
-}
-
-/* Untuk layar sangat kecil di bawah 576px */
-@media (max-width: 575.98px) {
-    .row-cols-2>* {
-        width: 100%;
-    }
-}
-
-/* Untuk semua section pada layar kecil */
-@media (max-width: 768px) {
-
-    section,
-    footer {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    /* Untuk container di dalam section agar tidak double padding */
-    section,
-    footer .container {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    /* Penyesuaian khusus untuk beberapa section */
-    #hero .container {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    #tentang .row {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    /* Untuk judul section yang keluar dari container */
-    .judul-wrapper {
-        padding-left: 20px;
-        padding-right: 20px;
     }
 }
